@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-body text-center">
+        <img width="150" height="150" class="rounded-circle img-thumbnail border-danger"
+        [src]="user.picture?.large" 
+        alt="" />
+    </div>
+    <div class="card-title text-primary">
+
+        <h1>
+            <span class="px-2" >{{user.name?.title}}. </span>
+            <span class="px-2" >{{user.name?.first}} </span>
+            <span class="px-2" >{{user.name?.last}} </span>
+        </h1>
+        
+    </div>
+
+
+    <div class="card-text">
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+        {{user.email}}
+    <br>
+
+    <fa-icon [icon]="faMapMarkedAlt"></fa-icon>
+    {{user.location?.city}} {{user.location?.state}}
+   {{user.location?.street?.number}}
+        <br>
+
+    <fa-icon [icon]="faPhone"></fa-icon>
+    {{user.phone}}
+    <br>
+    
+    <fa-icon [icon]="faDatabase"></fa-icon>
+    {{user.registered?.date | date | uppercase}}
+</div>
+
+</div>    
+<br>
+<span>
+    
+    <button (click)="refreshPage()" class="btn btn-primary">
+        RELOAD
+    </button>
+   
+</span>
